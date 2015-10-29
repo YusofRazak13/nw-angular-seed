@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-controller="ApplicationController">
   <head>
-    <title>Title of the document</title>
+    <title>{{ title }}</title>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="vendor/ng-loader/parsers/nwjs.js"></script>
     <script type="text/javascript" src="vendor/ng-loader/ngloader.min.js"></script>
     <script type="text/javascript">
+      var gui = require('nw.gui')
+      var win = gui.Window.get();
+      win.showDevTools();
       ngLoader({
         done: function(components){
           var myApp = angular.module("myApp", ['ngSanitize']);

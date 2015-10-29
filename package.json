@@ -1,6 +1,7 @@
 {
   "main": "app://localhost/index.html",
   "chrome-args": "--load-plugin=.\\plugins\\npWebChimera.dll",
+  "-chrome-args": "--load-plugin=plugins/WebChimera.plugin",
   "name": "nw-demo",
   "description": "demo app of node-webkit",
   "version": "0.1.0",
@@ -8,8 +9,8 @@
   "window": {
     "title": "node-webkit demo",
     "icon": "link.png",
-    "toolbar": true,
-    "frame": false,
+    "toolbar": false,
+    "frame": true,
     "width": 800,
     "height": 500,
     "position": "mouse",
