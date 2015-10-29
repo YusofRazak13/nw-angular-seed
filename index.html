@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="vendor/ng-loader/ngloader.min.js"></script>
+    <script type="text/javascript">
+      ngLoader({
+        done: function(components){
+          var myApp = angular.module("myApp", ['ngSanitize']);
+          for(var compType in components){
+            components[compType].forEach(function(comp){
+              myApp[compType](comp.named, comp.func);
+            });
+          }
+          angular.bootstrap(document, ['myApp']);
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+  <pre ng-bind-html="body" ng-controller="SampleController">
+  </pre>
+  </body>
+
+</html>
